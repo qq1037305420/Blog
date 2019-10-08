@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "vuepress build docs",
-    "dev": "vuepress dev docs",
+    "build": "vuepress build documents",
+    "dev": "vuepress dev documents",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
