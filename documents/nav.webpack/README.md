@@ -211,10 +211,12 @@ sidebarDepth: 3
 
 ## webpack 优化
 
-- 动态加载
+- ### 动态加载
+  
   - import().then()
   - 需要引入 @babel/plugin-syntax-dynamic-import
-- 热更新
+- ### 热更新
+  
   - devserver: {hot: true}
   - webpack.NamedModulesPlugin 热更新模块
   - webpack.HotModleReplacementPlugin 热更新插件
