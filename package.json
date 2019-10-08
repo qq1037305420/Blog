@@ -1,0 +1,28 @@
+{
+  "name": "TK's_coding_blog",
+  "version": "1.0.0",
+  "description": "A doc for myself",
+  "main": "null",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "vuepress build docs",
+    "dev": "vuepress dev docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "docs"
+  ],
+  "author": "tk sun",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.4",
+    "lodash.escaperegexp": "^4.1.2",
+    "lodash.sortby": "^4.7.0",
+    "lodash.startcase": "^4.4.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-meta": "0.0.1",
+    "transliteration": "^2.1.7"
+  }
+}
