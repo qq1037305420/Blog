@@ -335,7 +335,7 @@ node 用commonjs2
 
 ### 不引用外部库(node_module)
 
-- TODO:: 补充插件名称
+- webpack-node-externals
 
 ### 动态加载
 
