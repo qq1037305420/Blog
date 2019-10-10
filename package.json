@@ -9,7 +9,7 @@
   "scripts": {
     "build": "vuepress build documents",
     "dev": "vuepress dev documents",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "npm run build && gh-pages -d docs"
   },
   "keywords": [
     "docs"
@@ -24,5 +24,8 @@
     "markdown-it": "^10.0.0",
     "markdown-it-meta": "0.0.1",
     "transliteration": "^2.1.7"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }

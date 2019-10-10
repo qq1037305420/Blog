@@ -366,6 +366,7 @@ new bundleANalyzerPlugin() 生产环境下
 `optimization: {splitChunks: []}`
 
 ![optimazation](./static/webpack_optimazation.png)
+<a href="./static/webpack_optimazation.png">下载图片</a>
 
 #### dllplugin 不要和splitchunks 一起使用
 
