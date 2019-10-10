@@ -23,13 +23,15 @@ sidebarDepth: 3
 
 - ### 配置环境变量
 
-  - `module.exports = (env) => {`
+  - ```
+    module.exports = (env) => {
 
-    ​	`console.log(env)`
+    ​	console.log(env)
 
-    ​	`let isEnv = env.development`
+    ​	let isEnv = env.development
 
-    `}`
+    }
+    ```
 
   - 新建base,dev,prod文件
 
@@ -88,33 +90,22 @@ sidebarDepth: 3
 
   - 讲解析的css 变成style标签插入到页面中
 
-- `module: {`
-
-  ​	`rules: [`
-
-  ​		`{`
-
-  `			test: /\.css$/,`
-
-  `use: ['style-loader', 'css-loader']`			
-
-  ​		`}`,
-
-  ​		`{`
-
-  `			test: /\.scss$/,`
-
-  `use: ['style-loader', 'css-loader', 'sass-loader']`			
-
-  ​		`}`
-
-  ​	`]`
-
-  `}`
+- ```
+  module: {
+  ​	rules: [
+  ​		{
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']`		
+  ​		},
+            test: /\.scss$/,
+  ​		}
+  ​	]
+  }
+  ```
 
 - 如果css引入scss
 
-  - `			test: /\.css$/,`
+  - `test: /\.css$/,`
 
     `use: ['style-loader', {`
 
