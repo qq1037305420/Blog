@@ -10,6 +10,6 @@ features:
   details: Daily work schedule
 - title: 996.icu
   details: Put me on the board
-footer: TK Sun | tksun@gmail.com
+footer: TK Sun | tksun14@gmail.com
 ---
 
