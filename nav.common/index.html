@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Common | Happy Coding</title>
+    <meta name="description" content="学无止境...">
+    
+    
+    <link rel="preload" href="/Blog/assets/css/0.styles.cbb02bc7.css" as="style"><link rel="preload" href="/Blog/assets/js/app.7d348231.js" as="script"><link rel="preload" href="/Blog/assets/js/2.50c720c6.js" as="script"><link rel="preload" href="/Blog/assets/js/7.7b430948.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.ad95002f.js"><link rel="prefetch" href="/Blog/assets/js/3.10c05cee.js"><link rel="prefetch" href="/Blog/assets/js/4.2b55803f.js"><link rel="prefetch" href="/Blog/assets/js/5.63bcd3f3.js"><link rel="prefetch" href="/Blog/assets/js/6.95fa72b5.js"><link rel="prefetch" href="/Blog/assets/js/8.3b202551.js"><link rel="prefetch" href="/Blog/assets/js/9.ea501a8f.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.cbb02bc7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">Happy Coding</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/nav.common/" class="nav-link router-link-exact-active router-link-active">Common</a></div><div class="nav-item"><a href="/Blog/nav.cordova/" class="nav-link">Cordova</a></div><div class="nav-item"><a href="/Blog/nav.externals/" class="nav-link">Externals</a></div><div class="nav-item"><a href="/Blog/nav.webpack/" class="nav-link">Webpack</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/nav.common/" class="nav-link router-link-exact-active router-link-active">Common</a></div><div class="nav-item"><a href="/Blog/nav.cordova/" class="nav-link">Cordova</a></div><div class="nav-item"><a href="/Blog/nav.externals/" class="nav-link">Externals</a></div><div class="nav-item"><a href="/Blog/nav.webpack/" class="nav-link">Webpack</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/nav.common/" class="active sidebar-link">Common</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/nav.common/#平级数据变成树-flat2tree" class="sidebar-link">平级数据变成树 flat2tree</a></li><li class="sidebar-sub-header"><a href="/Blog/nav.common/#树形结构转平行结构-tree2flat" class="sidebar-link">树形结构转平行结构 tree2flat</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="树型结构"><a href="#树型结构" aria-hidden="true" class="header-anchor">#</a> 树型结构</h1> <h2 id="平级数据变成树-flat2tree"><a href="#平级数据变成树-flat2tree" aria-hidden="true" class="header-anchor">#</a> 平级数据变成树 flat2tree</h2> <div class="language- extra-class"><pre class="language-text"><code>function flat2tree( allData, id = &quot;id&quot;, pid = &quot;parentId&quot;, children = &quot;children&quot;, rootId = &quot;&quot;) {
+  let treeMapList = allData.reduce((memo, current) =&gt; {
+    memo[current[id]] = current;
+    return memo;
+  }, {});
+  return allData.reduce((arr, current) =&gt; {
+    let parentId = current[pid];
+    let parent = treeMapList[parentId];
+    if (parentId == rootId) {
+    arr.push(current);
+    } else if (parent) {
+        parent[children]
+        ? parent[children].push(current)
+        : (parent[children] = [current]);
+    }  
+        return arr;
+  }, []);
+}
+</code></pre></div><h2 id="树形结构转平行结构-tree2flat"><a href="#树形结构转平行结构-tree2flat" aria-hidden="true" class="header-anchor">#</a> 树形结构转平行结构 tree2flat</h2> <div class="language- extra-class"><pre class="language-text"><code>function tree2flat(children: any, childrenKey: string): any {
+    var arr: any[] = []
+    for (var i = 0; i &lt; children.length; i++) {
+        arr.push(children[i])
+        if (_.get(children[i], [childrenKey])) arr = arr.concat(tree2flat(children[i][childrenKey], childrenKey))
+    }
+    return arr
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.7d348231.js" defer></script><script src="/Blog/assets/js/2.50c720c6.js" defer></script><script src="/Blog/assets/js/7.7b430948.js" defer></script>
+  </body>
+</html>
