@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "vuepress build documents",
+    "build": "vuepress build docs",
     "dev": "vuepress dev documents",
-    "deploy": "npm run build && gh-pages -d docs"
+    "deploy": "npm run build && gh-pages -d documents"
   },
   "keywords": [
     "docs"
