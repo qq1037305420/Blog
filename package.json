@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "vuepress build docs",
-    "dev": "vuepress dev documents",
+    "dev": "vuepress dev docs",
     "deploy": "npm run build && gh-pages -d documents && rimraf documents"
   },
   "keywords": [

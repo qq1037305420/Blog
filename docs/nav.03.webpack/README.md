@@ -1,5 +1,5 @@
 ---
-title: 'Webpack学习'
+title: 'Webpack'
 sidebarDepth: 3
 ---
 

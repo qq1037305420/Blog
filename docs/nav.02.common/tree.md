@@ -1,11 +1,10 @@
 ---
-title: Common
+title: 树型结构
+sidebarDepth: 3
 ---
 
-# 树型结构
-
 ## 平级数据变成树 flat2tree
-```
+``` js
 function flat2tree( allData, id = "id", pid = "parentId", children = "children", rootId = "") {
   let treeMapList = allData.reduce((memo, current) => {
     memo[current[id]] = current;
@@ -27,7 +26,7 @@ function flat2tree( allData, id = "id", pid = "parentId", children = "children",
 ```
 
 ## 树形结构转平行结构 tree2flat
-```
+``` js
 function tree2flat(children: any, childrenKey: string): any {
     var arr: any[] = []
     for (var i = 0; i < children.length; i++) {
