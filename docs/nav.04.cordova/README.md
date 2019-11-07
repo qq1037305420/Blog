@@ -1,5 +1,5 @@
 ---
-title: cordova 混合型app框架
+title: Cordova 插件
 sidebarDepth: 3
 ---
 
@@ -145,11 +145,41 @@ dependencies {
         return false;
     }
 ```
-- method
+- 映射方法
 ``` java
  private boolean openMapLocation(JSONArray args, final CallbackContext callbackContext) throws JSONException {
         JSONObject obj = args.getJSONObject(0);
         Log.wtf(obj.toString())
  }
 ```
+- 方法callback
+``` java
+// 直接返回
+callbackContext.error("转照片失败");
+callbackContext.sucess("转照片失败");
 
+// 多次触发
+// 需要设置 setKeepCallback
+PluginResult noResult = new PluginResult(PluginResult.Status.NO_RESULT);
+noResult.setKeepCallback(true);
+callbackContext.sendPluginResult(noResult);
+```
+- 线程
+``` java
+// 执行Java代码时候 需要和UI交互的用UI线程
+cordova.getActivity().runOnUiThread(() -> { // lambda表达式
+    // 需要执行的代码
+});
+// 多线程
+cordova.getThreadPool().execute(new Runnable() { // 正常写法
+    public void run() {}
+});
+```
+- 引入依赖文件
+``` xml
+  // aar 需要用gradle引入
+  <lib-file src="src/android/libs/nxminterface.aar" />
+  <lib-file src="src/android/libs/xnet-v1.0.0.jar" />
+  <resource-file src="src/android/libs/armeabi" target="jniLibs/armeabi"/> 
+  <framework src="src/android/libs/bundle.gradle" custom="true" type="gradleReference" />
+```
